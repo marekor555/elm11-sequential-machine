@@ -15,15 +15,15 @@ module top(
 
     // 011 -> set 001 -> toggle 010 -> OR 111 -> jmp 000 -> noop
     logic [8:0] commands[40] = '{
-        0: 9'b011_101010, // set leds to 101010
+        0: 9'b011_111111, // set leds to 101010
         1: 9'b001_111111, // toggle all
         2: 9'b001_111111, // toggle all
         3: 9'b001_111111, // toggle all
-        4: 9'b010_101010, // switch on 101010
+        4: 9'b011_101010, // switch on 101010
         5: 9'b001_111111, // toggle all
         6: 9'b001_111111, // toggle all 
         7: 9'b001_111111, // toggle all 
-        8: 9'b111_000000, // jump to start, useless because it requires if statements to be usefull
+        8: 9'b111_000100, // jump to 4, useless because it requires if statements to be usefull
         default: 9'b00_000000
     };
 
